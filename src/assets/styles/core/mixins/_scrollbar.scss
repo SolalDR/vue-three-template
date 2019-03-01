@@ -1,0 +1,17 @@
+@mixin scrollbar($size, $foreground-color, $background-color) {
+    // For Google Chrome
+    ::-webkit-scrollbar {
+      width: $size * .6;
+      height: $size * .6;
+      @include respond-above(m) {
+        width: $size;
+        height: $size;
+      }
+    }
+    ::-webkit-scrollbar-thumb {
+      background: $foreground-color;
+    }
+    ::-webkit-scrollbar-track {
+      background: $background-color;
+    }
+}
