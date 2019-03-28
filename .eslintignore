@@ -1,3 +1,4 @@
 src/webgl/loaders/*
 src/webgl/controls/*
 src/webgl/postprocessing/*
+src/services/loader/*

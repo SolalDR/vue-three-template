@@ -3,15 +3,16 @@
 </template>
 
 <script>
-import Scene from "../webgl/Scene"
+import Scene from '../webgl/Scene';
+
 export default {
-  mounted(){
-    this.scene = new Scene(this.$el)
+  mounted() {
+    this.scene = new Scene(this.$el);
   },
-  destroyed(){
-    this.scene.destroy()
-  }
-}
+  destroyed() {
+    this.scene.destroy();
+  },
+};
 </script>
 
 <style lang="scss">

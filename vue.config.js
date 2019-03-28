@@ -16,13 +16,16 @@ module.exports = {
     },
     plugins: [
       new webpack.ProvidePlugin({ THREE: 'three' }),
+      new webpack.DefinePlugin({
+        'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+      }),
     ],
   },
   css: {
     loaderOptions: {
       sass: {
         data: `
-          @import "@/assets/styles/main.scss";
+          @import "@/assets/styles/core/index.scss";
         `,
       },
     },

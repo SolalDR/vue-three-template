@@ -1,4 +1,3 @@
-import * as THREE from 'three';
 import { OBJLoader } from './loaders';
 import { OrbitControls } from './controls';
 import RendererComposer from './postprocessing';
@@ -28,17 +27,10 @@ class Scene {
   }
 
   main() {
-    this.objLoader.load('/3d/chair.obj', (result) => {
-      const chair = result.children[0];
-      chair.material = new THREE.MeshNormalMaterial();
-      chair.needsUpdate = true;
-      chair.position.y = -2;
-      chair.scale.set(0.01, 0.01, 0.01);
-      chair.rotation.x = -Math.PI / 2;
-      this.scene.add(chair);
-      console.log(chair);
-    });
-
+    this.cube = new THREE.Mesh(new THREE.CubeGeometry(), new THREE.MeshPhongMaterial({
+      color: 0xFF0000,
+    }));
+    this.scene.add(this.cube);
     this.camera.position.z = 5;
     this.loop();
   }
